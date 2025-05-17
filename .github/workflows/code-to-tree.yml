@@ -39,6 +39,12 @@ jobs:
         run: CFLAGS="-I \"C:\Program Files\Git\usr\local\include\" -L \"C:\Program Files\Git\usr\local\lib\"" make
       - run: dir
       - run: ldd code-to-tree.exe
+      - shell: bash
+        run: cat toolcall-1.json | ./code-to-tree.exe
+      - shell: bash
+        run: cat toolcall-2.json | ./code-to-tree.exe
+      - shell: bash
+        run: cat toolcall-3.json | ./code-to-tree.exe
       - uses: actions/upload-artifact@v4
         with:
           name: code-to-tree.exe
@@ -69,6 +75,9 @@ jobs:
       - run: make
       - run: ls -l
       - run: otool -L code-to-tree
+      - run: cat toolcall-1.json | ./code-to-tree 
+      - run: cat toolcall-2.json | ./code-to-tree 
+      - run: cat toolcall-3.json | ./code-to-tree 
       - uses: actions/upload-artifact@v4
         with:
           name: code-to-tree
