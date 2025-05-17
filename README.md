@@ -1,15 +1,15 @@
 
 # Table of Contents
 
--   [MCP Server: code-to-tree](#orgf5248dc)
--   [Using code-to-tree](#orgcf66e47)
--   [Configure MCP Clients](#orgcd08e07)
--   [Building (Windows)](#org2850757)
--   [Building (macOS)](#org7635de0)
+-   [MCP Server: code-to-tree](#orgf542482)
+-   [Using code-to-tree](#org862e7dc)
+-   [Configure MCP Clients](#orge54fa87)
+-   [Building (Windows)](#org48a8180)
+-   [Building (macOS)](#orgbaa740e)
 
 
 
-<a id="orgf5248dc"></a>
+<a id="orgf542482"></a>
 
 # MCP Server: code-to-tree
 
@@ -39,18 +39,18 @@ result for the same question,  you will likely get a completely different
 style or content. The screenshots or questions provided here are just for the reference)
 
 
-<a id="orgcf66e47"></a>
+<a id="org862e7dc"></a>
 
 # Using code-to-tree
 
 Before everthing, you need to have the code-to-tree executable on your
 machine (`code-to-tree.exe` for Windows, `code-to-tree` for macOS),
-you can download from Github release page or build it yourself. Once
+you can download at GitHub release [page](https://github.com/micl2e2/code-to-tree/releases) or build it yourself. Once
 downloaded, you configure your MCP clients to install it, check the section
 *"Configure MCP Clients"* for more details.
 
 
-<a id="orgcd08e07"></a>
+<a id="orge54fa87"></a>
 
 # Configure MCP Clients
 
@@ -83,7 +83,7 @@ specify the location of `code-to-tree`
     }
 
 
-<a id="org2850757"></a>
+<a id="org48a8180"></a>
 
 # Building (Windows)
 
@@ -153,7 +153,7 @@ Compile code-to-tree:
     # Assume the output is: /c/path/to/code-to-tree.exe
 
 
-<a id="org7635de0"></a>
+<a id="orgbaa740e"></a>
 
 # Building (macOS)
 

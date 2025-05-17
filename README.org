@@ -31,7 +31,7 @@ style or content. The screenshots or questions provided here are just for the re
 
 Before everthing, you need to have the code-to-tree executable on your
 machine (=code-to-tree.exe= for Windows, =code-to-tree= for macOS),
-you can download from Github release page or build it yourself. Once
+you can download at GitHub release [[https://github.com/micl2e2/code-to-tree/releases][page]] or build it yourself. Once
 downloaded, you configure your MCP clients to install it, check the section
 /"Configure MCP Clients"/ for more details.
 
