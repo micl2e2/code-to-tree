@@ -1,6 +1,6 @@
 #+OPTIONS: toc:1 num:nil
 
-* MCP Server: code-to-tree
+* MCP Server: code-to-tree 
 
 The code-to-tree server's goals are:
 1. Give LLMs the capability of *accurately* converting source code into
