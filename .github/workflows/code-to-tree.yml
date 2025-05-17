@@ -1,0 +1,75 @@
+name: code-to-tree
+run-name: code-to-tree
+on: [push]
+jobs:
+  code-to-tree-win2025:
+    if: contains(github.event.head_commit.message, 'NO_GH_CI') == false
+    runs-on: windows-2025
+    steps:
+      - uses: actions/checkout@v4
+      - run: git clone --depth=1 https://github.com/tree-sitter/tree-sitter
+      - run: git clone --depth=1 https://github.com/tree-sitter/tree-sitter-c
+      - run: git clone --depth=1 https://github.com/tree-sitter/tree-sitter-cpp
+      - run: git clone --depth=1 https://github.com/tree-sitter/tree-sitter-rust
+      - run: git clone --depth=1 https://github.com/tree-sitter/tree-sitter-go
+      - run: git clone --depth=1 https://github.com/tree-sitter/tree-sitter-python
+      - run: git clone --depth=1 https://github.com/tree-sitter/tree-sitter-java
+      - run: git clone --depth=1 https://github.com/tree-sitter/tree-sitter-ruby
+      - shell: bash
+        run: cd tree-sitter && patch -i ts1.patch && OS=1 make install
+      - shell: bash
+        run: cd tree-sitter-c && OS=1 make install
+      - shell: bash
+        run: cd tree-sitter-cpp && OS=1 make install
+      - shell: bash
+        run: cd tree-sitter-rust && OS=1 make install
+      - shell: bash
+        run: cd tree-sitter-go && OS=1 make install
+      - shell: bash
+        run: cd tree-sitter-python && OS=1 make install
+      - shell: bash
+        run: cd tree-sitter-java && OS=1 make install
+      - shell: bash
+        run: cd tree-sitter-ruby && OS=1 make install
+      - shell: bash
+        run: git clone --depth=1 https://github.com/micl2e2/mcpc
+      - shell: bash
+        run: cd mcpc && make install
+      - shell: bash
+        run: CFLAGS="-I \"C:\Program Files\Git\usr\local\include\" -L \"C:\Program Files\Git\usr\local\lib\"" make
+      - run: dir
+      - run: ldd code-to-tree.exe
+      - uses: actions/upload-artifact@v4
+        with:
+          name: code-to-tree.exe
+          path: code-to-tree.exe
+  code-to-tree-macos13:
+    if: contains(github.event.head_commit.message, 'NO_GH_CI') == false
+    runs-on: macos-13
+    steps:
+      - uses: actions/checkout@v4
+      - run: git clone --depth=1 https://github.com/tree-sitter/tree-sitter
+      - run: git clone --depth=1 https://github.com/tree-sitter/tree-sitter-c
+      - run: git clone --depth=1 https://github.com/tree-sitter/tree-sitter-cpp
+      - run: git clone --depth=1 https://github.com/tree-sitter/tree-sitter-rust
+      - run: git clone --depth=1 https://github.com/tree-sitter/tree-sitter-go
+      - run: git clone --depth=1 https://github.com/tree-sitter/tree-sitter-python
+      - run: git clone --depth=1 https://github.com/tree-sitter/tree-sitter-java
+      - run: git clone --depth=1 https://github.com/tree-sitter/tree-sitter-ruby
+      - run: cd tree-sitter && make install
+      - run: cd tree-sitter-c && make install
+      - run: cd tree-sitter-cpp && make install
+      - run: cd tree-sitter-rust && make install
+      - run: cd tree-sitter-go && make install
+      - run: cd tree-sitter-python && make install
+      - run: cd tree-sitter-java && make install
+      - run: cd tree-sitter-ruby && make install
+      - run: git clone --depth=1 https://github.com/micl2e2/mcpc
+      - run: cd mcpc && make install
+      - run: make
+      - run: ls -l
+      - run: otool -L code-to-tree
+      - uses: actions/upload-artifact@v4
+        with:
+          name: code-to-tree
+          path: code-to-tree
