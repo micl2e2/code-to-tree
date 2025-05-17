@@ -16,7 +16,7 @@ jobs:
       - run: git clone --depth=1 https://github.com/tree-sitter/tree-sitter-java
       - run: git clone --depth=1 https://github.com/tree-sitter/tree-sitter-ruby
       - shell: bash
-        run: cd tree-sitter && patch -i ts1.patch && OS=1 make install
+        run: cd tree-sitter && patch -i ../ts1.patch && OS=1 make install
       - shell: bash
         run: cd tree-sitter-c && OS=1 make install
       - shell: bash
