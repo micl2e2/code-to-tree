@@ -6,6 +6,7 @@ jobs:
     if: contains(github.event.head_commit.message, 'NO_GH_CI') == false
     runs-on: windows-2025
     steps:
+      - run: brew install coreutils
       - uses: actions/checkout@v4
       - run: git clone --depth=1 https://github.com/tree-sitter/tree-sitter
       - run: git clone --depth=1 https://github.com/tree-sitter/tree-sitter-c
