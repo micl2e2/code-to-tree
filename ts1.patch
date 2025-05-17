@@ -1,0 +1,13 @@
+diff --git a/Makefile b/Makefile
+index d0e0ff9c..8a1b89e2 100644
+--- a/Makefile
++++ b/Makefile
+@@ -38,6 +38,8 @@ ifneq ($(findstring darwin,$(shell $(CC) -dumpmachine)),)
+ 	LINKSHARED += -dynamiclib -Wl,-install_name,$(LIBDIR)/libtree-sitter.$(SOEXTVER)
+ else ifneq ($(findstring mingw32,$(shell $(CC) -dumpmachine)),)
+ 	SOEXT = dll
++	SOEXTVER_MAJOR = dll
++	SOEXTVER = dll
+ 	LINKSHARED += -s -shared -Wl,--out-implib,$(@:dll=lib)
+ libtree-sitter.lib: libtree-sitter.$(SOEXT)
+ else
