@@ -45,10 +45,16 @@ jobs:
         run: cat toolcall-2.json | ./code-to-tree.exe
       - shell: bash
         run: cat toolcall-3.json | ./code-to-tree.exe
+      - shell: bash
+        run: sha512sum code-to-tree.exe > CHECKSUM-code-to-tree.exe
       - uses: actions/upload-artifact@v4
         with:
           name: code-to-tree.exe
           path: code-to-tree.exe
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CHECKSUM-code-to-tree.exe
+          path: CHECKSUM-code-to-tree.exe
   code-to-tree-macos13:
     if: contains(github.event.head_commit.message, 'NO_GH_CI') == false
     runs-on: macos-13
@@ -78,7 +84,12 @@ jobs:
       - run: cat toolcall-1.json | ./code-to-tree 
       - run: cat toolcall-2.json | ./code-to-tree 
       - run: cat toolcall-3.json | ./code-to-tree 
+      - run: sha512sum code-to-tree > CHECKSUM-code-to-tree
       - uses: actions/upload-artifact@v4
         with:
           name: code-to-tree
           path: code-to-tree
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CHECKSUM-code-to-tree
+          path: CHECKSUM-code-to-tree
