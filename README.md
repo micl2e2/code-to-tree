@@ -1,4 +1,3 @@
-
 # Table of Contents
 
 -   [MCP Server: code-to-tree](#orgf542482)
@@ -37,6 +36,10 @@ in `q.md`.
 (**IMPORTANT NOTE**: LLMs have no responsibility of generating the identical
 result for the same question,  you will likely get a completely different
 style or content. The screenshots or questions provided here are just for the reference)
+
+<a href="https://glama.ai/mcp/servers/@micl2e2/code-to-tree">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@micl2e2/code-to-tree/badge" alt="code-to-tree MCP server" />
+</a>
 
 
 <a id="org862e7dc"></a>
@@ -219,4 +222,3 @@ Compile code-to-tree:
     # Remember the binary's location
     pwd
     # Assume the output is: /path/to/code-to-tree
-
