@@ -11,6 +11,7 @@
 <a id="orgf542482"></a>
 
 # MCP Server: code-to-tree
+[![Trust Score](https://archestra.ai/mcp-catalog/api/badge/quality/micl2e2/code-to-tree)](https://archestra.ai/mcp-catalog/micl2e2__code-to-tree)
 
 The code-to-tree server's goals are:
 
